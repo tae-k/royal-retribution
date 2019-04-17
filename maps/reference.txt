@@ -1,0 +1,5 @@
+torches   1-4   8
+banners   5-8
+chest     9     16
+trap      p     2
+holes     c     32
