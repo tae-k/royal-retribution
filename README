@@ -1,0 +1,328 @@
+######################################
+=                                    =
+=       T E A M  U B I H A R D       =
+=    Idean, Tae Jin, Billy, Derek    =
+=                                    =
+######################################
+=================
+# Assignment 12 #
+=================
+
+Design (Derek)
+- updated blocks
+- created big boss enemy
+- created main boss enemy
+
+New Loading Screen (Idean)
+  - Animated and indicative of progress
+Updated High Score System (Idean)
+  - Less buggy, doesn't require a file to already exist
+Fixed bugs in Loading and High Score from last week (Idean)
+  - Cleaned code and fixed several bugs remaining.
+Recording Key Strokes (Idean)
+  - Began working on recording key strokes for later playback.
+Menu Screen Upgrade (Idean)
+  - Worked on an animated background for menu screen.
+
+Enemy Movement (Tae Jin Kim)
+- the enemies now move randomly
+
+Big Boss (Tae Jin Kim/ Billy)
+- setup how the big boss acts
+- uses two big hands (each have 5 HP)
+  ~ it smashes the ground at intervals (your old location)
+  ~ you can only damage the hand while it is on the ground
+  ~ the hands are very powerful (bring hit by one -> lose full heart)
+
+Main Boss (Billy)
+- after the big boss dies, the main boss appears
+~Phase 1
+- he summons 3 clones
+- they stand still and you have to attack 1.
+- if you attack the correct 1 he takes damage and they all turn transparent to 
+  let you know it was the correct one.
+- it then is invincible while they switch positions.
+- if you attack the wrong one the real one chases you and the clones disappear
+- you can either hit him while he comes at you and then he resets
+- If you don't hit him you take damage then he resets.
+- when he has one hp left he goes to phase 2
+~Phase2 
+- he turns red and starts chasing you.
+- he is invincible during that time.
+- after 4 seconds he will turn green and stop for 2 seconds.
+- hit him while he is green to kill him.
+
+Other
+- working on editing how score is saved (Idean)
+- all walls are combined into one -> increases efficiency (Idean)
+- mini enemy transforms earlier so that it's easier to notice the (Tae Jin)
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Design (Derek)
+- updated blocks
+- death animations
+- updated lights (added animation)
+- max health increase (milk), heal (food)
+
+Loading Screen (Tae Jin Kim/Billy)
+King/Enemy Death Animations (Tae Jin Kim)
+
+Kill Drops (Tae Jin Kim)
+- some enemies drop food
+- eating food increases health by 1 full heart
+
+Edited Instructions (Tae Jin Kim)
+- enemy drop has instruction
+- coin has its own instruction
+* open chest instruction removed (redundant)
+
+Fixed Up Mini Enemies (Billy)
+- were not transforming correctly
+- some enemies weren't at first chests
+
+Fixed Up Sword Swings (Billy)
+- sometimes, enemies won't die
+
+Edited Camera (Billy)
+- added interesting lighting
+
+fixed walking through walls bug(Billy)
+
+Fixing and Efficiency (Idean)
+- collision bugs
+- working on combining wall tiles (in progress)
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+LEVEL 4
+
+Design (Derek)
+- new map
+- edited animations
+
+Level_4_State setup (Tae Jin Kim)
+
+New Enemy (Tae Jin Kim)
+- called mini enemy
+1) appears as a chest
+2) waits for the king to get close
+3) transforms and starts chasing king
+*) made it so that the enemies cary around the chests, cute lol (Billy)
+
+New Hitbox (Billy)
+- only bottom half of character and enemies collide
+
+New Moving Trap (Billy)
+- the spinning blades in level 4 move around in an unpredictable manner
+
+Map Additions (Billy & Derek)
+- Derek created and Billy edited the map additions
+  ~ in order to match up the new enemies with the chests
+
+Overall Improvement of Code (Idean)
+- improved collisions (very few bugs now)
+- cleaned up code to improve look and efficiency
+
+Extra
+- losing shows king giving up (Tae Jin Kim)
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Concerning Levels
+- new music plays in-game
+- instruction texts are now centered
+- instruction texts are more event-specific
+- panning does not have glitchy flying images
+  * how to skip panning instructions were added
+  * panning can now move in multiple directions
+
+Concerning Character
+- character cannot push around enemies
+- character cannot run through enemies
+- sword hitbox has become more accurate
+- character actually "falls" down a hole
+  ~ the hole does not remain in the level
+- running no longer sneaks past enemies (you are louder when you run)
+
+Other
+- character can run forever with [RSHIFT] (for testing)
+- highscore and credit screens show how to return to main
+- many of the bugs related to collision have been removed
+
+Concerning Coding
+*  The collision detection and resolution system has almost completely been
+   rewritten to take into position the true double value of the characters,
+   rather than the SDL-preferred integer value of the pixels. This solves many
+   issues described above related to characters pushing and going through
+   walls.
+
+*  Previously, many functions unrelated to levels were scattered throughout the
+   level_x_state.cpp files in order to accomplish certain goals via quick, sim-
+   ple fixes. To keep our code DRY, we factored out most of the common code into
+   a "playing_state.cpp" file. Also, it became unintuitive to have files doing
+   multiple different tasks, so all enemy-related code was moved to enemy.cpp
+   and most of the character-related code was moved to character.cpp. In the
+   coming weeks, we will continue to factor out as much as possible and to keep
+   our new structure consistent.
+
+*  We also realized that many of the x_state files were using similar functions
+   "privately" rather than sharing them under a "protected" class. This was fi-
+   xed by placing these function within state.cpp.
+
+*  Lots of skeleton code that is now obsolete has been removed from various
+   places throughout the codebase, and code from collisions has been factored
+   out into "util" file for use in other places.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Assets (Derek Chang)
+- created all assets and map layout.
+
+Fixed Time-step (Idean)
+- Using a fixed timestep now throughout.
+
+Fixed Collision Bugs (Idean)
+- Fixed many bugs related to collision resolution. Especially due to rounding
+  issues.
+
+Levels (Tae)
+~ press [p] to pause the game
+~ press [r] to resume the game
+~ press [0] to automatically lose
+~ press [1] to go to the prev level (!@level1)
+~ press [2] to go to the next level (win @level3)
+~ at the start of each level: panning scene - shows where the stairs are
+  * if you want to skip this scene, press [m]
+
+Fixed Sword Implementation (Tae)
+~ it is its own separate sprite
+~ cool combo: [space], run right after
+
+Seg Fault Mistakes (Billy)
+~ enemies were randomy causing seg faults
+~ seg faults now no longer occur when touching a trap
+
+Created new Trap (Billy)
+~ spinning blades king must evade
+~ health powerup you will get you an extra heart
+  ~ and you will regain full health.
+
+Instruction texts(Billy and Tae)
+~ when activating trap getting a key or falling down a hole, the game will pause
+   and you will get an text saying what happened.
+
+All levels are now subclassed (Billy)
+~ fixed many bugs associated with the levels
+  * enemies were not acting correctly, faciltate changing up code
+
+Collision Grid/Buckets (Idean)
+- Split the map into a grid layout, and collision checks occur within each grid.
+- Changed the collision resolution logic to use velocities rather than collision
+  rectangles for determining the collision direction. This should fix many bugs
+  with collisions that may occur when clipping corners.
+- Made enhancements to the update and collisions logic to increase the FPS of
+  the game enormously.
+- Initial implementation of a fixed time-step (in progress by next week)
+
+Traps (Billy)
+1) when a character steps into a room, traps activate
+2) the doors close behind him and he cannot escape unless...
+3) he kills one of the enemies in the room before they kill him
+* During Gameplay, the screen will go "TRAPPED, KILL THEM ALL TO ESCAPE"
+
+Chest and Doors (Billy)
+1) walking up to a chest and pressing e will open the chest.
+2) item will show up below stamina bar to simulate an inventory.
+3) if item is a key, walking up to a door and pressing e will open it.
+4) after opening the door, the key is used and disappears.
+5) After getting keys a text appears that says the key is to be used on a special door
+* when opening a chest, make sure to be  walking towards
+  it at the same time
+
+Holes (Billy)
+1) walking upon a cracked hole will cause you to fall down a floor
+2) your position will be set to a fixed position on level 1
+
+Instructions (Tae Jin Kim)
+1) added a new instruction for opening chests
+2) made it so pressing buttons before the instructions show up do not cause
+   the instructions to be fulfilled
+
+Intro (Tae Jin Kim)
+1) fixed the issue where the character can move during the intro
+2) edited the location (position & throne) and events of the throne room
+
+King Level (Tae Jin Kim)
+1) killing enemies increases your experience
+2) you level up once you kill enough enemies
+3) it becomes harder to level up as your level increases
+
+Floor Movement (Tae Jin Kim)
+Floor 1 to Floor 2    press [2]
+Floor 1 to lose       press [3]
+Floor 2 to win        press [2]
+Floor 2 to lose       press [3]
+
+Other (Tae Jin Kim)
+~ edited all of the states so that they utilized maps rather than vectors
+
+IN-PROGRESS FIXES
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Attacking animations. There is a janky change in position occuring when
+attacking. To fix this, we are currently splitting the sword sprite from the
+character sprite so that the character will stay in the same position on the map
+while the sword swings and checks for collisions.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Build Instructions:
+  To build the project, run "make"
+  To run the application, run "./bin/game"
+
+Character Controls:
+  To Move:          [w] 
+                 [a][s][d] OR arrow keys
+  To Run:         [SHIFT]
+  To Attack:      [SPACE]
+
+Other Important Buttons:
+  To Quit the Program: [ESCAPE]
+  To Return to Menu Screen from any state: [q]
+
+In Title Screen:
+  To Skip Scene: [q]
+
+In Intro Screen:
+  To Skip Scene: [1]
+  To Go to Next Speech: [n]
+
+In Playing State:
+  LIVES:
+  ~ Start with 3 hearts
+  ~ Lose 1/2 heart every time an enemy touches you
+  EXTRA:
+  ~ Enemies start following you when you get close to them
+  ~ There a few seconds of invincibility -> keeps you alive longer
+  WINNING:
+  ~ Reach the Stairs
+  1) From spawn point, move down
+  2) You will see open corridors to your right
+  3) At the fourth corridor, start walking right
+  4) As you walk, you will see a path going down -> stairs
+  ~ Highscore is ONLY updated when you win. When you lose, nth happens.
+
+In Menu Screen:
+  New Game: Starts Level 0
+  HighScores: Shows the highscores
+  Credits: Shows who worked on the game
+  Quit: Same as pressing [ESCAPE], quits program
+  Options can be Chosen with Mouse / arrow keys & [ENTER]/[SPACE]
+
+Notes:
+  After running with both valgrind and sanitizers, there are many leaks that
+  are coming directly from SDL. All dynamically allocated elements are freed
+  all surfaces are freed before reassignment, all textures, audio, the rend-
+  erer, and window are all destroyed whenever the application quits, and all
+  SDL libraries have been quit when the application panics and when it clos-
+  es successfully.
+

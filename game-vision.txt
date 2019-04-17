@@ -1,0 +1,48 @@
+Idean Labib, Billy Carrington, Derek Chang
+9/15/17
+
+Game Proposal
+
+Our plan for a 2-Dimensional top-down game is a kingdom under attack.
+You start as the King inside your castle during a time of peace.
+Suddenly your squire rushes in to tell you that aliens have invaded
+your lands and burned your villages. The mothership hovers above your
+castle and alien soldiers have landed on your walls. Honor compels you
+to fight off these monsters and reclaim your kingdom!
+
+The game starts off with you controlling your character in the throne
+room at the bottom floor. The level design is simply each floor of the
+castle, leading up to the top, is a separate "level". Your objective
+is to climb the stairs to each level and progress through the castle
+until you reach the top floor. Each floor contains enemies, hopefully
+with a weapon of sorts, that increase in difficulty as you go higher up.
+There could also be traps like holes in the floor where if you miss them
+you fall through back down a floor. We would like to include a boss
+battle of sorts at the end where you would duel the alien overlord at
+the top of the castle. He has some sort of power or stages in the fight
+that make him difficult to defeat. Once you beat him, the game will
+congratulate you on defending your home and will end.
+
+Gameplay wise we want to give the character a weapon to shoot or hit
+the enemies with. You start off with a full "bar" of health, displayed
+as a bar or hearts or whatever, and you take a certain amount of damage
+when hit by an enemy or something shot at you. Throughout the levels
+some power-ups will be available for you to pick up. For instance
+running shoes to make you move faster, or temporary damage boost. You
+can also regain health by eating food your cook left behind all
+throughout the castle.
+
+As the character you move in the cardinal directions using the w/a/s/d
+keys. The mouse click attacks, either as a sword swipe or shooting, in
+whatever direction you're facing at the time. You start each level at
+one end and need to reach the stairs at the other end in order to
+progress through the levels. Enemies can move similarly but maybe not
+as fast. Of course if the game is too easy we can adjust how the
+enemies behave, but for now that's the idea. The game screen centers
+on your character and moves with you, so your character stays in the
+same spot on the computer screen and everything seems to move around
+you.
+
+The game will run at 60 fps at a 1280x720 resolution. We aren't yet
+sure of a name but we'll work on that later. Currently considering
+"Stonewall Abbey" as a potential name.
